@@ -6,6 +6,11 @@ class nginx {
     ensure  => absent,
   }
 
+#  file { '/etc/yum.repos.d/epel.repo':
+#    ensure  => present,
+#    content => 'puppet:///modules/nginx/epel.repo',
+#  }   
+
   package { 'nginx':
     ensure  => "1.0.15-5.el6",
     require => Package['httpd'],
@@ -18,12 +23,18 @@ class nginx {
   }
 
   file {'/etc/nginx/conf.d/catpics.conf':
-    source => 'puppet:///modules/nginx/catpics.conf',
-    notify => Service['nginx'],
+    require => Package['nginx'],
+    source  => 'puppet:///modules/nginx/catpics.conf',
+    notify  => Service['nginx'],
+  }
+
+  file {'/var/www/catpics/':
+    ensure => directory,
   }
 
   file {'/var/www/catpics/index.html':
-    ensure => present,
+    require => File['/var/www/catpics/'],
+    ensure  => present,
     content => ' 					I wuv catz!!! :3				',
   }
 
