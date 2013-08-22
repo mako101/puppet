@@ -19,3 +19,9 @@ node 'ipa.example.net' {
   }
    
 }
+
+node 'beta.example.net' {
+
+  include nginx
+
+}
