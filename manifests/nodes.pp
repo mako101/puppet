@@ -30,4 +30,5 @@ node 'beta.example.net' {
     home    => '/home/art'
     managehome => true,
     password => password,
+  }
 }
