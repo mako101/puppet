@@ -15,7 +15,7 @@ node 'ipa.example.net' {
   }
 
   package { 'pygame':
-    ensure => absent,
+    ensure  => absent,
   }
    
 }
@@ -24,4 +24,10 @@ node 'beta.example.net' {
 
   include nginx
 
+  user { 'art':
+    ensure  => present,
+    comment => 'Art Vanderlay',
+    home    => '/home/art'
+    managehome => true,
+    password => password,
 }
