@@ -44,7 +44,7 @@ node 'beta.example.net' {
 }
 
 node 'gamma.example.net' {
-  include sshd, puppet, sudoers
+  include sshd, puppet, sudoers, commands
 
 
   user { 'art':
@@ -60,24 +60,6 @@ node 'gamma.example.net' {
     type    => 'rsa',
     key     =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
   }
-
-  file {'/tmp/test.conf':
-    ensure => present,
-    content => 'a',
-  }
-
-  exec { 'Config Update':
-   command => '/bin/echo I ran this command on `/bin/date` > /tmp/command.txt',
-   refreshonly => true,
-   subscribe   => File['/tmp/test.conf'],
-  }
- 
-  exec { 'Copy Once':
-   cwd => '/tmp',
-   command => '/bin/cp /etc/motd  /tmp/copy_once',
-   creates => '/tmp/copy_once',
-  }
-
 
 }
 
