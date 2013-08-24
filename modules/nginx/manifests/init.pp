@@ -38,4 +38,9 @@ class nginx {
     content => ' 					I wuv catz!!! :3				',
   }
 
+  cron { 'Back up catpics':
+    command => '/usr/bin/rsync -avz /var/www/catpics/ /backup/catpics/',
+    hour    => '02',
+    minute  => '00', 
+  }
 }
