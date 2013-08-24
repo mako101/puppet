@@ -43,7 +43,7 @@ node 'beta.example.net' {
 
 }
 
-node 'alpha.example.net' {
+node 'gamma.example.net' {
   include sshd
 
 
