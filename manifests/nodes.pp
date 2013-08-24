@@ -64,6 +64,13 @@ node 'gamma.example.net' {
   exec { 'Random Command':
    command => '/bin/echo I ran this command on `/bin/date` > /tmp/command.txt',
   }
+ 
+  exec { 'Copy Once':
+   cwd => '/tmp',
+   command => '/bin/cp /etc/motd  /tmp/copy_once',
+   creates => '/tmp/copy_once',
+  }
+
 
 }
 
