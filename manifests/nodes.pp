@@ -44,7 +44,7 @@ node 'beta.example.net' {
 }
 
 node 'gamma.example.net' {
-  include sshd
+  include sshd, puppet
 
 
   user { 'art':
