@@ -1,0 +1,14 @@
+# Managed by Puppet
+
+Port 22
+
+Protocol 2
+
+PermitRootLogin yes
+
+PasswordAuthentication no
+
+AllowUsers git art
+
+UsePAM yes
+

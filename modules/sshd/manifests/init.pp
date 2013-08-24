@@ -7,6 +7,14 @@ class sshd {
   service { 'sshd':
     require => Package['openssh-server'],
     ensure  => running,
-    restart => '/sbin/service sshd reload'
+    restart => '/sbin/service sshd reload',
+  }
+
+
+  file { '/etc/ssh/sshd_config':
+    source => 'puppet:///modules/sshd/sshd_config',
+    notify => Service['sshd'],
+    owner  => 'root',
+    group  => 'root',
   }
 }
