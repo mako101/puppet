@@ -18,6 +18,8 @@ class commands {
    creates => '/tmp/copy_once',
   }
 
+# 3-step command
+
   exec { 'command-1':
     command => '/bin/echo Step 1',
   }
@@ -28,9 +30,17 @@ class commands {
   }
 
 
-  exec { 'command-2':
+  exec { 'command-3':
     command => '/bin/echo Step 3',
     require => Exec['command-2'],
   }
+
+
+#  Run command with the path specified
+
+  exec { 'test-command':
+    command => 'echo "I am running this without full path :)" > /tmp/foo',
+#    path    => ['/bin', '/usr/bin'],
+  }  
 
 }
