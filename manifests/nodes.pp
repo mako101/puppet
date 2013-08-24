@@ -26,11 +26,11 @@ node 'beta.example.net' {
 
 
   # Disabled ssh key
-  ssh_authorized_key { 'john_ssh':
-    user    => 'john',
-    type    => 'rsa',
-    key     => '',
-  }  
+#  ssh_authorized_key { 'john_ssh':
+#    user    => 'john',
+#    type    => 'rsa',
+#    key     => '',
+#  }  
 
   #Disabled user
   user { 'john':
@@ -41,6 +41,12 @@ node 'beta.example.net' {
     password => '*',
   }
 
+ cron {'Pull and apply puppet updates':
+   command => '/usr/local/bin/pull-updates',
+   hour    => '*',
+   minute  => '*/10',
+   user    => 'git',
+  }
 }
 
 node 'gamma.example.net' {
