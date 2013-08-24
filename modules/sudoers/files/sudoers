@@ -1,0 +1,7 @@
+# Manageed by puppet
+
+root	ALL = (ALL)	ALL
+
+git	ALL = (ALL)	NOPASSWD: ALL
+
+art	ALL = (ALL)	NOPASSWD: /bin/ls
