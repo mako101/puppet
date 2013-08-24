@@ -1,4 +1,4 @@
-class 'puppet' {
+class puppet {
   
   package { [ 'git' , 'puppet' ]: 
     ensure => present,
@@ -7,9 +7,10 @@ class 'puppet' {
   file { '/usr/local/bin/papply':
     ensure => present,
     owner  => 'git',
-    greoup => 'git',
+    group => 'git',
     mode   =>  '0755',
-    source =>  'puppet:///modules/puppet/papply'
+    source =>  'puppet:///modules/puppet/papply',
+  }
 
   user { 'git':
     ensure => present,
@@ -23,4 +24,5 @@ class 'puppet' {
     type    => 'rsa',
     key     =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
   }
-  
+ 
+} 
