@@ -13,7 +13,7 @@ class inline_templates {
   
   file {"${path}/ipaddr":
     ensure  => present,
-    content => inline_template("My IP address is <%= @ipaddess %>.\n")
+    content => inline_template("My IP address is <%= @ipaddress %>.\n"),
   }
   
   file {"${path}/time":
