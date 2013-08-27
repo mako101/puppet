@@ -17,7 +17,14 @@ node 'ipa.example.net' {
   package { 'pygame':
     ensure  => absent,
   }
-   
+  
+ cron { 'Cron job to run as user':
+   command => 'ls /home/viktor > /home/viktor/inventory',
+   hour    => '*/1',
+   minute  => '15',
+   user    => 'viktor'
+  } 
+ 
 }
 
 node 'beta.example.net' {
