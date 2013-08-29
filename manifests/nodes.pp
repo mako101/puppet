@@ -3,12 +3,13 @@ node 'ipa.example.net' {
 
   include nginx
 
-  file { '/tmp/hello':
-    content => "# This file is managed by Puppet\n
- 	Hello, world\n",
-    owner   =>  "viktor",
-    group   =>  "nobody",
+  file { '/var/www/catpics/img':
+    source  => 'puppet:///modules/catpics/img',
+    recurse => true,
+    reqire  => File['/var/www/catpics/'],
   }
+
+
 
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
