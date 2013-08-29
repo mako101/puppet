@@ -4,9 +4,9 @@ node 'ipa.example.net' {
   include nginx
 
   file { '/var/www/catpics/img':
-    source  => 'puppet:///modules/catpics/img',
-    recurse => true,
-    reqire  => File['/var/www/catpics/'],
+    source   => 'puppet:///modules/catpics/imgs',
+    recurse  => true,
+    require  => File['/var/www/catpics/'],
   }
 
 
