@@ -11,12 +11,7 @@ node 'ipa.example.net' {
 
   $site_name = 'catpics'
   $site_domain = 'catpics.example.net'
-
-  file {'/etc/nginx/conf.d/catpics.conf':
-    require => Package['nginx'],
-    content  => template('nginx/vhost.conf.erb'),
-    notify  => Service['nginx'],
-  }
+  $index_file  = '		I luv catz!!!			'
 
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
@@ -39,16 +34,10 @@ node 'beta.example.net' {
 
   include nginx
 
-  $site_name = 'dogpic'
+  $site_name = 'dogpics'
   $site_domain = 'dogpics.example.net'
-
-  file {'/etc/nginx/conf.d/catpics.conf':
-    require => Package['nginx'],
-    content  => template('nginx/vhost.conf.erb'),
-    notify  => Service['nginx'],
-  }
+  $index_text  = '		Dogs?? Not sure if gusta..		'
   
-
 
   # Disabled ssh key
 #  ssh_authorized_key { 'john_ssh':

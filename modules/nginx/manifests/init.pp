@@ -1,7 +1,9 @@
 # NginX Web Server #
 
 class nginx {
-  
+ 
+  include nginx::config
+ 
   package { 'httpd':
     ensure  => absent,
   }
@@ -22,24 +24,8 @@ class nginx {
     enable  => true,
   }
 
-#  file {'/etc/nginx/conf.d/catpics.conf':
-#    require => Package['nginx'],
-#    source  => template('nginx/vhost.conf.erb'),
-#    notify  => Service['nginx'],
-#  }
-
-  file {'/var/www/catpics/':
-    ensure => directory,
-  }
-
-  file {'/var/www/catpics/index.html':
-    require => File['/var/www/catpics/'],
-    ensure  => present,
-    content => ' 					I wuv catz!!! :3				',
-  }
-
-  cron { 'Back up catpics':
-    command => '/usr/bin/rsync -avz /var/www/catpics/ /backup/catpics/',
+  cron { 'Back up $site_name':
+    command => '/usr/bin/rsync -avz /var/www/$site_name/ /backup/$site_name/',
     hour    => '02',
     minute  => '00', 
   }
