@@ -22,11 +22,11 @@ class nginx {
     enable  => true,
   }
 
-  file {'/etc/nginx/conf.d/catpics.conf':
-    require => Package['nginx'],
-    source  => 'puppet:///modules/nginx/catpics.conf',
-    notify  => Service['nginx'],
-  }
+#  file {'/etc/nginx/conf.d/catpics.conf':
+#    require => Package['nginx'],
+#    source  => template('nginx/vhost.conf.erb'),
+#    notify  => Service['nginx'],
+#  }
 
   file {'/var/www/catpics/':
     ensure => directory,

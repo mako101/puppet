@@ -9,7 +9,14 @@ node 'ipa.example.net' {
     require  => File['/var/www/catpics/'],
   }
 
+  $site_name = 'catpics'
+  $site_domain = 'catpics.example.net'
 
+  file {'/etc/nginx/conf.d/catpics.conf':
+    require => Package['nginx'],
+    content  => template('nginx/vhost.conf.erb'),
+    notify  => Service['nginx'],
+  }
 
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
@@ -31,6 +38,16 @@ node 'ipa.example.net' {
 node 'beta.example.net' {
 
   include nginx
+
+  $site_name = 'dogpic'
+  $site_domain = 'dogpics.example.net'
+
+  file {'/etc/nginx/conf.d/catpics.conf':
+    require => Package['nginx'],
+    content  => template('nginx/vhost.conf.erb'),
+    notify  => Service['nginx'],
+  }
+  
 
 
   # Disabled ssh key
