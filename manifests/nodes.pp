@@ -3,11 +3,11 @@ node 'ipa.example.net' {
 
   include nginx
 
-  file { '/var/www/catpics/img':
-    source   => 'puppet:///modules/catpics/imgs',
-    recurse  => true,
-    require  => File['/var/www/catpics/'],
-  }
+#  file { '/var/www/catpics/img':
+#    source   => 'puppet:///modules/catpics/imgs',
+#    recurse  => true,
+#    require  => File['/var/www/catpics/'],
+#  }
 
   $site_name = 'catpics'
   $site_domain = 'catpics.example.net'
@@ -34,9 +34,9 @@ node 'beta.example.net' {
 
   include nginx
 
-  $site_name = 'dogpics'
-  $site_domain = 'dogpics.example.net'
-  $index_text  = '		Dogs?? Not sure if gusta..		'
+#  $site_name = 'dogpics'
+#  $site_domain = 'dogpics.example.net'
+#  $index_text  = '		Dogs?? Not sure if gusta..		'
   
 
   # Disabled ssh key

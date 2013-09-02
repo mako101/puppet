@@ -5,7 +5,7 @@ class nginx::config {
   }
 
   file {"/var/www/${site_name}/index.html":
-    require => File['/var/www/${site_name}/'],
+    require => File["/var/www/${site_name}"],
     ensure  => present,
     content => template('nginx/index.html.erb'),
   }
@@ -18,13 +18,14 @@ class nginx::config {
 
   # Sample backup job
 
-  file {"/backup/$site_name":
+  file {"/backup/${site_name}":
     ensure => directory,
   }
 
-  cron { "Back up $site_name":
-    command => '/usr/bin/rsync -avz /var/www/$site_name/ /backup/$site_name/',
+  cron { "Back up ${site_name}":
+    command => "/usr/bin/rsync -avz /var/www/${site_name}/ /backup/${site_name}/",
     hour    => '02',
     minute  => '00', 
+    user    => 'root',
   }
 }
