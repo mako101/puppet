@@ -11,7 +11,7 @@ node 'ipa.example.net' {
 
   $site_name = 'catpics'
   $site_domain = 'catpics.example.net'
-  $index_file  = '		I luv catz!!!			'
+  $index_text  = '		I luv catz!!!			'
 
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",

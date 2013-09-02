@@ -18,9 +18,10 @@ class nginx::config {
 
   # Sample backup job
 
-  file {"/backup/$site_name"
-    esnure => directory,
+  file {"/backup/$site_name":
+    ensure => directory,
   }
+
   cron { "Back up $site_name":
     command => '/usr/bin/rsync -avz /var/www/$site_name/ /backup/$site_name/',
     hour    => '02',
