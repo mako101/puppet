@@ -65,7 +65,7 @@ node 'beta.example.net' {
 
 node 'gamma.example.net' {
   include sshd, puppet, sudoers, commands
-
+  include inline_templates
 
   user { 'art':
     ensure  => present,
