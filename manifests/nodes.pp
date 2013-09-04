@@ -34,9 +34,9 @@ node 'beta.example.net' {
 
   include nginx
 
-  nginx::website {'dogpics':
-#    $site_domain = 'dogpics.example.net'
-#    $index_text  = '		Dogs?? Not sure if gusta..		'
+  nginx::website { 'dogpics':
+    site_domain => 'dogpics.example.net',
+    index_text  => '		Dogs?? Not sure if gusta..		',
   }
 
   # Disabled ssh key
