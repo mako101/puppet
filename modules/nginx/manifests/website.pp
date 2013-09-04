@@ -21,7 +21,7 @@ define nginx::website ( $site_domain, $hour = '00', $index_text = 'default' ) {
 
   # Sample backup job
 
-  file {"/backup/${site_name}":
+  file {['/backup', "/backup/${site_name}"]:
     ensure => directory,
   }
 
