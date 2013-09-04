@@ -9,10 +9,11 @@ node 'ipa.example.net' {
 #    require  => File['/var/www/catpics/'],
 #  }
 
-  $site_name = 'catpics'
-  $site_domain = 'catpics.example.net'
-  $index_text  = '		I luv catz!!!			'
-
+  nginx::site { 'catpics':
+    $site_domain => 'catpics.example.net',
+    $index_text  => '		I luv catz!!!			',
+  }
+  
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
   }
