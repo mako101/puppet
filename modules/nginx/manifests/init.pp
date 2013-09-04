@@ -2,8 +2,6 @@
 
 class nginx {
  
-  include nginx::config
- 
   package { 'httpd':
     ensure  => absent,
   }
@@ -24,9 +22,4 @@ class nginx {
     enable  => true,
   }
 
-  cron { 'Back up $site_name':
-    command => '/usr/bin/rsync -avz /var/www/$site_name/ /backup/$site_name/',
-    hour    => '02',
-    minute  => '00', 
-  }
 }

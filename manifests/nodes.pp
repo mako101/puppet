@@ -9,36 +9,35 @@ node 'ipa.example.net' {
 #    require  => File['/var/www/catpics/'],
 #  }
 
-  nginx::site { 'catpics':
-    $site_domain => 'catpics.example.net',
-    $index_text  => '		I luv catz!!!			',
+  nginx::website { 'catpics':
+    site_domain => 'catpics.example.net',
+    index_text  => '		I luv catz!!!			',
+    hour        => '03',
   }
   
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
   }
 
-  package { 'pygame':
-    ensure  => absent,
+ 
+  cron { 'Cron job to run as user':
+    command => 'ls /home/viktor > /home/viktor/inventory',
+    hour    => '*/1',
+    minute  => '15',
+    user    => 'viktor',
   }
   
- cron { 'Cron job to run as user':
-   command => 'ls /home/viktor > /home/viktor/inventory',
-   hour    => '*/1',
-   minute  => '15',
-   user    => 'viktor'
-  } 
- 
 }
+
 
 node 'beta.example.net' {
 
   include nginx
 
-#  $site_name = 'dogpics'
-#  $site_domain = 'dogpics.example.net'
-#  $index_text  = '		Dogs?? Not sure if gusta..		'
-  
+  nginx::website {'dogpics':
+#    $site_domain = 'dogpics.example.net'
+#    $index_text  = '		Dogs?? Not sure if gusta..		'
+  }
 
   # Disabled ssh key
 #  ssh_authorized_key { 'john_ssh':
