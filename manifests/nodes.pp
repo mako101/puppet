@@ -34,6 +34,10 @@ node 'beta.example.net' {
 
   include nginx
 
+  class {'ntp':
+    server => 'ipa.example.net',
+ }
+
   nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
     index_text  => '		Dogs?? Not sure if gusta..		',
