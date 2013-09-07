@@ -9,12 +9,15 @@ class hardware {
     else { 
     notify { 'This machine has little RAM': }
   }
-  
-}
 
-  if $::processorcount <= 2 {
+  if $::processorcount <= 1 {
     notify { 'This is a single-core machine': }
   } 
     else { 
     notify { 'This is a multi-core machine': } 
   }
+  
+  unless $::kernel == 'Windows' {
+    notify { 'This machine runs a Linux kernel': }  
+  }
+}
