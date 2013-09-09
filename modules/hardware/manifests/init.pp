@@ -12,7 +12,7 @@ class hardware {
     notify { 'This machine has little RAM': }
   }
 
-  if $::processorcount <= 1 {
+  if $::processorcount < 2 {
     notify { 'This is a single-core machine': }
   } 
     else { 

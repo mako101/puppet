@@ -6,4 +6,10 @@ class random {
     ensure => directory,
   }
   
+  if 'Eggs' in 'do you know the price of eggs' {
+    notify { 'sting found': }
+  }
+  else { 
+    notify { 'string not found': }
+  }
 }
