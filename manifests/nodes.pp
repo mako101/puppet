@@ -32,7 +32,7 @@ node 'ipa.example.net' {
 
 node 'beta.example.net' {
 
-  include nginx
+  include nginx, random
 
   class {'ntp':
     server => 'ipa.example.net',
