@@ -36,7 +36,12 @@ class hardware {
     }
   }
     
-  
+  $arch = $::architecture ? {
+    'i386'   => '32-bit',
+    'x86_64' => '64-bit',
+    default  => 'UNKNOWN',
+  }
+  notify { "This machine has ${arch} architecture": } 
   
   
 }
