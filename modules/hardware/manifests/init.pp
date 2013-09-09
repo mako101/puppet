@@ -26,7 +26,7 @@ class hardware {
 # Testing the case statements  
   
   case $::operatingsystem {
-    'CentOS', 'RedHat': {
+    'CentOS', 'RedHat', 'Scientific': {
       notify { 'This is a Red Hat derivative': }
     }
     'Debian', 'Ubuntu': {
