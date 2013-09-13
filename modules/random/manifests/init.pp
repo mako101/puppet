@@ -12,4 +12,9 @@ class random {
   else { 
     notify { 'string not found': }
   }
+  notify { "Math - the answer is $math, should equal 10": } 
+    
+  $bit = 3 << 3  
+  notify { "Bitwise shift - the answer is $bit, should be 24": }
+  
 }

@@ -44,4 +44,19 @@ class hardware {
   notify { "This machine has ${arch} architecture": } 
   
   
+  $proc  = $::processorcount
+  if ($proc > 6 and $proc < 10) and $::operatingsystem == 'CentOS' {
+    notify { 'BOOLEAN AND - this machine has 8 cores and runs Centos': }
+  }
+    else { notify {' BOOLEAN AND - does not compute ...': }
+    }
+
+  if $::interfaces =~ /.*virbr.*/ {
+    notify { 'This machine is a physical VM host': }
+  }
+    else { notify { 'This is a Virtual Machine': }
+      
+  }
+    
 }
+  
