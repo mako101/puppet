@@ -12,6 +12,8 @@ class random {
   else { 
     notify { 'string not found': }
   }
+  
+  $math = (10+2) / 6 + 8
   notify { "Math - the answer is $math, should equal 10": } 
     
   $bit = 3 << 3  
@@ -30,4 +32,11 @@ class random {
   }
   else { notify {'No match :(' : } 
   }
+  
+  $test = 'This is a phrase'
+  if $test =~ /(\This)\ (\is)/ {
+    notify { "The first two words are \"$0\" \n First is ${1}, second is \"$2\" ": }
+  }
+  
+  
 }

@@ -57,6 +57,12 @@ class hardware {
     else { notify { 'This is a Virtual Machine': }
       
   }
-    
+  
+  $uname = generate('/bin/uname', '-a')
+  if $uname=~ /(\d)\.(\d+)(\.\d+)/ {
+    notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"$3\"": }
+  }
+  
+  
 }
   
