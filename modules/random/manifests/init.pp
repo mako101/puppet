@@ -16,5 +16,18 @@ class random {
     
   $bit = 3 << 3  
   notify { "Bitwise shift - the answer is $bit, should be 24": }
+ 
+  $word = 'house'
+  if $word =~ /h.*/ {
+    notify { "The word is $word": }
+  }
+  else { notify {'No match :(' : } 
+  }
   
+  $word1 = 'booo31'
+  if $word1 =~ /app\d*/ {
+    notify { "The word is $word1": }
+  }
+  else { notify {'No match :(' : } 
+  }
 }
