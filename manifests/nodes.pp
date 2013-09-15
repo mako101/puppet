@@ -30,7 +30,7 @@ node 'ipa.example.net' {
 }
 
 
-node 'beta.example.net' {
+node /beta.*/ {
 
   include nginx, random
 

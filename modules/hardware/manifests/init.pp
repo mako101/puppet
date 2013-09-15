@@ -63,6 +63,7 @@ class hardware {
     notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"$3\"": }
   }
   
+
   
 }
   

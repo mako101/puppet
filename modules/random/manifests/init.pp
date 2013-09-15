@@ -38,5 +38,15 @@ class random {
     notify { "The first two words are \"$0\" \n First is ${1}, second is \"$2\" ": }
   }
   
+#  Substitution test
+#
+#  $sub = regsubst('This is an old phrase', 'old', 'new')
+#  notify { $sub: }
+  
+#  $sub = regsubst('This is my old phrase', ' .* old', ' your new')
+#  notify { $sub: }
+  
+  $sub = regsubst('This is my old phrase', '(my) .* (phrase)', 'an awesome \2, oh \1!')
+  notify { $sub: }
   
 }
