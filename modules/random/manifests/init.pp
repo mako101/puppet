@@ -1,5 +1,7 @@
 class random {
   
+  include random::arrays
+  
   file { ['/tmp/dir1',
           '/tmp/dir2',
           '/tmp/dir3']:
@@ -7,7 +9,7 @@ class random {
   }
   
   if 'eggs' in 'do you know the price of eggs' {
-    notify { 'sting found': }
+    notify { 'string found': }
   }
   else { 
     notify { 'string not found': }
