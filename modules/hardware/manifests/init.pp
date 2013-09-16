@@ -1,5 +1,7 @@
 class hardware {
  
+ include hardware::hashes
+ 
 # Testing the if statements 
   
   if $::memorysize_mb >= 8000 {
