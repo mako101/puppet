@@ -1,6 +1,6 @@
 class random {
   
-  include random::arrays
+  include random::arrays, random::exec
   
   file { ['/tmp/dir1',
           '/tmp/dir2',
@@ -50,5 +50,10 @@ class random {
   
   $sub = regsubst('This is my old phrase', '(my) .* (phrase)', 'an awesome \2, oh \1!')
   notify { $sub: }
+  
+  file {'/tmp/puppet.lastrun':
+    content => inline_template('<%= Time.now %>'),
+    backup  => false,
+}
   
 }
