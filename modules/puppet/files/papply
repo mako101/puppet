@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PUPPETDIR=/home/git/puppet
+cd ${PUPPETDIR}
+/usr/bin/puppet apply --modulepath ${PUPPETDIR}/modules ${PUPPETDIR}/manifests/site.pp --verbose $@
