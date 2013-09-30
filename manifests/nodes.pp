@@ -23,7 +23,7 @@ node 'ipa.example.net' {
   cron { 'Cron job to run as user':
     command => 'ls /home/viktor > /home/viktor/inventory',
     hour    => '*/1',
-    minute  => '15',
+    minute  => '14',
     user    => 'viktor',
   }
   
