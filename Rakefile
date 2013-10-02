@@ -1,6 +1,6 @@
 SSH = 'ssh -l git'
 
-desc "Run Puppet on ENV['CLIENT']
+desc "Run Puppet on ENV['CLIENT']"
 
 task :apply do
   client = ENV['CLIENT']
