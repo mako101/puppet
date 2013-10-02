@@ -1,16 +1,25 @@
 class puppet {
   
+  File {
+    ensure => present,
+    owner  => 'git',
+    group  => 'git',
+    mode   =>  '0755'
+  }
+  
   package { [ 'git' , 'puppet' ]: 
     ensure => present,
   }
 
   file { '/usr/local/bin/papply':
-    ensure => present,
-    owner  => 'git',
-    group => 'git',
-    mode   =>  '0755',
     source =>  'puppet:///modules/puppet/papply',
   }
+
+  file { 'usr/local/bin/pull-updates':
+    require => File['/usr/local/bin/papply'],
+    source  => 'puppet:///modules/puppet/pull-updates',
+  }
+
 
   user { 'git':
     ensure => present,
