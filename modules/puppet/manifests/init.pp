@@ -16,13 +16,13 @@ class puppet {
     ensure => present,
     home   => '/home/git',
     managehome => true,
-    password => '$6$dGO89awE$1jhkDDMTIO2RSxEQrlq3eCVP8aF86LVRjFYVdNcsD2/vqplUj8RTPTTR8HukfKyNS9prc7wOaVR6P3N2yY4Jz/',
+    password => '$1$Qe3NguvP$iCSlX2TZEPoKivZaNYge1/',
   }
   
   ssh_authorized_key { 'git_ssh':
     user    => 'git',
     type    => 'rsa',
-    key     =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
+    key     =>  'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4IfkiQE2Gz6v7xUtxnsTkPUZmWrDvbpUiiZLnD9uw5NiuCY+vvhYqABnkzKSu7Sv2YJ3bmDPJMYuSoJ1O9wmDcNFTmWVaL2E7oyXq5mDy2MWNOB6vhjndrXQ3x2Shox3m2U28Wl/aRi6nZzBE55f3u8heA1ZBNEihLTM3j0/CfzzmF6N7VIVXTGW+GaLgLe3nS5f7tUDQ8f8PwIj7ZeHhoI6uXZqBSEEVrtHwHbbzcNt4DzSA0s/HmjspnjD5Yqt0JA0FvLv9/z9cF5Fx8xGmYHE0h7RAYYNn/Lbh+u5wLXffn7+6NhfMpvaGyLh7M3pdMvyyLUWZBEhh2ulou/Rxw==',
   }
  
 } 
