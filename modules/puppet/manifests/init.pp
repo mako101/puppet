@@ -15,7 +15,7 @@ class puppet {
     source =>  'puppet:///modules/puppet/papply',
   }
 
-  file { 'usr/local/bin/pull-updates':
+  file { '/usr/local/bin/pull-updates':
     require => File['/usr/local/bin/papply'],
     source  => 'puppet:///modules/puppet/pull-updates',
   }
