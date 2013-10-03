@@ -32,7 +32,7 @@ node 'ipa.example.net' {
 
 node /beta.*/ {
 
-  include nginx, random, puppet
+  include nginx, random, puppet, sudoers
 
   class {'ntp':
     server => 'ipa.example.net',
