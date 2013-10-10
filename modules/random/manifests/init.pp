@@ -1,6 +1,6 @@
 class random {
   
-  include random::arrays, random::exec
+  include random::arrays, random::exec, random::hashes, random::if
   
   file { ['/tmp/dir1',
           '/tmp/dir2',
@@ -54,6 +54,13 @@ class random {
   file {'/tmp/puppet.lastrun':
     content => inline_template('<%= Time.now %>'),
     backup  => false,
-}
+  }
   
+  
+  file {'/tmp/var': 
+    ensure => link,
+    target => '/var',
+  }
+
 }
+

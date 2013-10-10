@@ -1,7 +1,5 @@
-class hardware {
- 
- include hardware::hashes
- 
+class random::if {
+
 # Testing the if statements 
   
   if $::memorysize_mb >= 8000 {
@@ -61,11 +59,13 @@ class hardware {
   }
   
   $uname = generate('/bin/uname', '-a')
-  if $uname=~ /(\d)\.(\d+)(\.\d+)/ {
+  if $uname =~ /(\d)\.(\d+)(\.\d+)/ {
     notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"$3\"": }
   }
   
-
+  if $::processor0 =~ /AMD (.*-.*\b)/ {
+    notify { "Your AMD processor model is ${1}": }
+  }
   
 }
   

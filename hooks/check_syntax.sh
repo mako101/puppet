@@ -18,6 +18,7 @@ do
   # Don't check empty files
 if [ $(git cat-file -s :0:$indexfile) -gt 0 ]
 then
+# This is a puppet parser check
     case $indexfile in
          *.pp)
           # Check puppet manifest syntax
@@ -26,6 +27,9 @@ then
           # Check ERB template syntax
           git cat-file blob :0:$indexfile | erb -x -T - | ruby -c 2> $error_msg > /dev/null;;
     esac
+
+# This is a puppet-lint check
+# puppet-lint --with-filename "$indexfile"
 
   if [ "$?" -ne 0 ]
   then

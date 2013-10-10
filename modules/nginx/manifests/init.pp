@@ -2,9 +2,7 @@
 
 class nginx {
  
-  package { 'httpd':
-    ensure  => absent,
-  }
+  package { 'httpd': ensure  => absent }
 
 #  file { '/etc/yum.repos.d/epel.repo':
 #    ensure  => present,

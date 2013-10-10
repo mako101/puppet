@@ -10,12 +10,27 @@ class random::arrays {
     notify { "I am sorry $crew, I can't let you do that": }
   }
   
- 
- 
- 
- 
- 
- 
- 
+#  define list_lunch() {
+#    notify { "Lunch included ${name}": }
+#  }
+#     
+#  $lunch = ['meal', 'drink', 'desert']
+#  list_lunch { $lunch: }
+#  
+  define list_vms(){
+    notify {"${name} is a Virtual Machine": }
+  }
   
+# First set  
+#  $vms = 'ipa alpha beta'
+#  $items = split($vms, ' ')
+
+# Second set
+$vms = 'ipa:alpha,beta gamma'
+$items = split($vms, ' |,|:')
+  
+list_vms {$items: }   
+ 
+ 
+ 
 }
