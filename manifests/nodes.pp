@@ -1,3 +1,4 @@
+
 node 'ipa.example.net' {
 
   include nginx, random, stages
@@ -29,9 +30,9 @@ node 'ipa.example.net' {
 }
 
 
-node /beta.*/ {
+node /beta.*/ inherits 'base' {
 
-  include nginx, random, puppet, sudoers
+  include puppet, sudoers
 
   class {'ntp':
     server => 'ipa.example.net',
@@ -69,7 +70,6 @@ node /beta.*/ {
 node 'gamma.example.net' {
   include sshd, puppet, sudoers, commands
   include inline_templates
-  include random
   include ntp
 
   user { 'art':
@@ -88,4 +88,4 @@ node 'gamma.example.net' {
 
 }
 
-
+node 'theta', 'zeta' inherits 'base' {}
