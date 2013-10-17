@@ -1,7 +1,6 @@
-
 node 'ipa.example.net' {
 
-  include nginx, random
+  include nginx, random, stages
 
 #  file { '/var/www/catpics/img':
 #    source   => 'puppet:///modules/catpics/imgs',

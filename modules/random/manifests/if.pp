@@ -36,12 +36,12 @@ class random::if {
     }
   }
     
-  $arch = $::architecture ? {
-    'i386'   => '32-bit',
-    'x86_64' => '64-bit',
-    default  => 'UNKNOWN',
-  }
-  notify { "This machine has ${arch} architecture": } 
+#  $arch = $::architecture ? {
+#    'i386'   => '32-bit',
+#    'x86_64' => '64-bit',
+#    default  => 'UNKNOWN',
+#  }
+#  notify { "This machine has ${arch} architecture": } 
   
   
   $proc  = $::processorcount
@@ -63,9 +63,14 @@ class random::if {
     notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"$3\"": }
   }
   
-  if $::processor0 =~ /AMD (.*-.*\b)/ {
+  if $::processor0 =~ /AMD (.*-\d+)/ {
     notify { "Your AMD processor model is ${1}": }
   }
   
+  if $::processor1 =~ /\D{3,6}-Core/ {
+  $pcount = regsubst($0, '\[A-Z]', '\[a-z]')  
+ notify { "This processor has ${pcount} structure": }
+#   notify { "The captured text is ${0}": }
+  }
 }
   
