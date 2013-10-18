@@ -33,9 +33,9 @@ node 'ipa.example.net' {
 node /beta.*/ inherits 'base' {
 
   include puppet, sudoers
-  include ntp::uk
+  
 
-  class {'ntp':
+  class {'ntp::uk':
     server => 'ipa.example.net',
  }
 
