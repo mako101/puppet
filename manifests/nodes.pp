@@ -32,14 +32,9 @@ node 'ipa.example.net' {
 
 node /beta.*/ inherits 'base' {
 
-  include puppet, sudoers
-  
-
-  class {'ntp::uk':
-    server => 'ipa.example.net',
- }
-
-  nginx::website { 'dogpics':
+  include puppet, sudoers, ntp::uk
+ 
+   nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
     index_text  => '		Dogs?? Not sure if gusta..		',
   }
