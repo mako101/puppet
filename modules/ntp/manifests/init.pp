@@ -1,4 +1,4 @@
-class ntp ($server = 'UNSET') {
+class ntp {
   
   package {'ntp':
     ensure  => latest,
