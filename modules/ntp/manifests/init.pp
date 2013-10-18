@@ -5,6 +5,7 @@ class ntp ($server = 'UNSET') {
   }
   
   file {'/etc/ntp.conf':
+    ensure  => present,
     content => template("${module_name}/ntp.conf.erb"),
     notify  => Service['ntpd'],
   }
