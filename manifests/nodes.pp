@@ -32,7 +32,7 @@ node 'ipa.example.net' {
 
 node /beta.*/ inherits 'base' {
 
-  include puppet, sudoers, ntp_uk
+  include puppet, sudoers, ntp
  
    nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
