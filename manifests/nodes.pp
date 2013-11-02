@@ -1,7 +1,19 @@
 
+node 'base' {
+  include nginx, random, stages
+}
+
 node 'ipa.example.net' {
 
-  include nginx, random, stages
+  include nginx, random, stages 
+  include dynamic
+  include dynamic::augeas
+  include dynamic::replace
+  include dynamic::templates
+  
+  
+#  include heritage::one
+  include heritage::two
 
 #  file { '/var/www/catpics/img':
 #    source   => 'puppet:///modules/catpics/imgs',
@@ -26,6 +38,16 @@ node 'ipa.example.net' {
     minute  => '14',
     user    => 'viktor',
   }
+ 
+#  dynamic::replace::append_if_not_there {'Add a line to a text file':
+#    file => '/home/viktor/inventory',
+#    line => 'An extra line :)',
+#  }
+  
+  dynamic::replace::remove_if_there {'Remove a line from a text file':
+    file => '/home/viktor/inventory',
+    line => 'An extra line :)',
+  } 
   
 }
 
