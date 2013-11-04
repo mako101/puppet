@@ -11,6 +11,10 @@ node 'ipa.example.net' {
   include dynamic::replace
   include dynamic::templates
   
+  class { 'puppet::secret':
+    puppetdir => '/home/viktor',
+  }
+  
   
 #  include heritage::one
   include heritage::two
@@ -54,7 +58,7 @@ node 'ipa.example.net' {
 
 node /beta.*/ inherits 'base' {
 
-  include puppet, sudoers, ntp
+  include puppet, sudoers, ntp, puppet::repo
  
    nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
