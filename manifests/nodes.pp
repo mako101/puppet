@@ -10,6 +10,7 @@ node 'ipa.example.net' {
   include dynamic::augeas
   include dynamic::replace
   include dynamic::templates
+  include dynamic::app_version
   
   class { 'puppet::secret':
     puppetdir => '/home/viktor',
