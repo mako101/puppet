@@ -3,18 +3,21 @@ node 'base' {
   include nginx, random, stages
 }
 
-node 'ipa.example.net' {
+node 'ipa.example.net' inherits 'base'{
 
-  include nginx, random, stages 
   include dynamic
-  include dynamic::augeas
-  include dynamic::replace
-  include dynamic::templates
-  include dynamic::app_version
-  
-  class { 'puppet::secret':
-    puppetdir => '/home/viktor',
-  }
+  include dynamic::include
+#  include dynamic::augeas
+#  include dynamic::replace
+#  include dynamic::templates
+#  include dynamic::app_version
+  include virtual::test1, virtual::test2
+ 
+ 
+ 
+#  class { 'puppet::secret':
+#    puppetdir => '/home/viktor',
+#  }
   
   
 #  include heritage::one
@@ -60,6 +63,7 @@ node 'ipa.example.net' {
 node /beta.*/ inherits 'base' {
 
   include puppet, sudoers, ntp, puppet::repo
+  include dynamic, dynamic::include
  
    nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
