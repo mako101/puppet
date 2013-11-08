@@ -65,6 +65,8 @@ node /beta.*/ inherits 'base' {
   include puppet, sudoers, ntp, puppet::repo
   include dynamic::include
  
+  dynamic::replace::add_git_aliases {'Adding git aliases':}
+ 
    nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
     index_text  => '		Dogs?? Not sure if gusta..		',
