@@ -63,7 +63,7 @@ node 'ipa.example.net' inherits 'base'{
 node /beta.*/ inherits 'base' {
 
   include puppet, sudoers, ntp, puppet::repo
-  include dynamic, dynamic::include
+  include dynamic::include
  
    nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
