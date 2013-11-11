@@ -15,8 +15,7 @@ class dynamic::replace {
 alias root=\'sudo su -\' \n
 alias gs=\'git status\' \n
 alias gm=\'git commit -am\' \n
-alias gpp=\'git pull && git push\' \n', 
-    $file = '/home/git/.bashrc') {
+alias gpp=\'git pull && git push\' \n', $file = '/home/git/.bashrc') {
     exec { "echo \"${line}\" >> ${file}":
       unless => "grep -Fx \"${line}\" ${file}",
     }

@@ -1,6 +1,6 @@
 
 node 'base' {
-  include nginx, random, stages
+  include nginx, random, stages, puppet::hosts
 }
 
 node 'ipa.example.net' inherits 'base'{
@@ -57,6 +57,7 @@ node 'ipa.example.net' inherits 'base'{
     line => 'An extra line :)',
   } 
   
+  dynamic::replace::add_git_aliases {'Adding git aliases':}
 }
 
 
