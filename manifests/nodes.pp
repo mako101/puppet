@@ -1,18 +1,17 @@
 
 node 'base' {
-  include nginx, random, stages, puppet::hosts
+  include nginx, random, stages, puppet
 }
 
 node 'ipa.example.net' inherits 'base'{
 
-  include dynamic
-  include dynamic::include
+  include dynamic, dynamic::include, dynamic::replace
 #  include dynamic::augeas
 #  include dynamic::replace
 #  include dynamic::templates
 #  include dynamic::app_version
   include virtual::test1, virtual::test2
- 
+  include random::schedule
  
  
 #  class { 'puppet::secret':
@@ -54,10 +53,12 @@ node 'ipa.example.net' inherits 'base'{
   
   dynamic::replace::remove_if_there {'Remove a line from a text file':
     file => '/home/viktor/inventory',
-    line => 'An extra line :)',
+    line => 'foobareefdfjidjasi;d',
   } 
   
-  dynamic::replace::add_git_aliases {'Adding git aliases':}
+  dynamic::replace::add_git_aliases {'Adding git aliases':
+    file => '/home/git/.bashrc',
+  }
 }
 
 

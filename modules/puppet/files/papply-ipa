@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PUPPETDIR=/home/viktor/puppet
+cd ${PUPPETDIR}
+sudo /usr/bin/puppet apply --modulepath ${PUPPETDIR}/modules ${PUPPETDIR}/manifests/site.pp --verbose $@

@@ -1,5 +1,7 @@
 class puppet {
   
+  include puppet::hosts, puppet::repo
+  
   File {
     ensure => present,
     owner  => 'git',
@@ -12,7 +14,8 @@ class puppet {
   }
 
   file { '/usr/local/bin/papply':
-    source =>  'puppet:///modules/puppet/papply',
+    source => ["puppet:///modules/puppet/papply-${::hostname}",
+               'puppet:///modules/puppet/papply'],
   }
 
   file { '/usr/local/bin/pull-updates':
