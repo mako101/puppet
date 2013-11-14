@@ -1,6 +1,6 @@
 
 node 'base' {
-  include nginx, random, stages, puppet
+  include nginx, random, stages, puppet, mysql::server
 }
 
 node 'ipa.example.net' inherits 'base'{
@@ -66,6 +66,7 @@ node /beta.*/ inherits 'base' {
 
   include puppet, sudoers, ntp, puppet::repo
   include dynamic::include
+  include mysql::server
  
   dynamic::replace::add_git_aliases {'Adding git aliases':}
  
