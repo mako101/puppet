@@ -11,7 +11,7 @@ node 'ipa.example.net' inherits 'base'{
 #  include dynamic::templates
 #  include dynamic::app_version
   include virtual::test1, virtual::test2
-  include random::schedule
+  include random::schedule, random::recurse, random::tidy
  
  
 #  class { 'puppet::secret':
