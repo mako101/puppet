@@ -1,6 +1,6 @@
 class mysql::server {
-  $password = 'secret'
-  $version  = 'mysql-server'
+  $password = "secret"
+  $version  = ['mysql', 'mysql-server'] 
   
   package { $version: ensure => installed }
 

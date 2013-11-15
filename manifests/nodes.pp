@@ -12,7 +12,11 @@ node 'ipa.example.net' inherits 'base'{
 #  include dynamic::app_version
   include virtual::test1, virtual::test2
   include random::schedule, random::recurse, random::tidy
- 
+  
+  mysql::db { 'testdb':
+    user => "funky",
+    password => "pizazz",
+  }
  
 #  class { 'puppet::secret':
 #    puppetdir => '/home/viktor',
@@ -20,7 +24,7 @@ node 'ipa.example.net' inherits 'base'{
   
   
 #  include heritage::one
-  include heritage::two
+   include heritage::two
 
 #  file { '/var/www/catpics/img':
 #    source   => 'puppet:///modules/catpics/imgs',
@@ -37,7 +41,6 @@ node 'ipa.example.net' inherits 'base'{
   file { '/etc/motd':
     content => "Puppeting away since 2013!!",
   }
-
  
   cron { 'Cron job to run as user':
     command => 'ls /home/viktor > /home/viktor/inventory',
