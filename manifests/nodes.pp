@@ -1,6 +1,6 @@
 
 node 'base' {
-  include nginx, random, stages, puppet, mysql::server
+  include nginx, random, stages, puppet 
 }
 
 node 'ipa.example.net' inherits 'base'{
@@ -10,14 +10,11 @@ node 'ipa.example.net' inherits 'base'{
 #  include dynamic::replace
 #  include dynamic::templates
 #  include dynamic::app_version
+#  include random::tidy
   include virtual::test1, virtual::test2
-  include random::schedule, random::recurse, random::tidy
+  include random::schedule, random::recurse 
   
-  mysql::db { 'testdb':
-    user => "funky",
-    password => "pizazz",
-  }
- 
+  
 #  class { 'puppet::secret':
 #    puppetdir => '/home/viktor',
 #  }
@@ -59,25 +56,33 @@ node 'ipa.example.net' inherits 'base'{
     line => 'foobareefdfjidjasi;d',
   } 
   
-  dynamic::replace::add_git_aliases {'Adding git aliases':
-    file => '/home/git/.bashrc',
+  $mysql_password = "secret"
+  
+  mysql::db {'testdb':
+    user => "funky",
+    password => "pizazz",
   }
+    
 }
 
 
 node /beta.*/ inherits 'base' {
 
-  include puppet, sudoers, ntp, puppet::repo
+  include sudoers, ntp, puppet::repo
   include dynamic::include
   include mysql::server
  
-  dynamic::replace::add_git_aliases {'Adding git aliases':}
- 
-   nginx::website { 'dogpics':
+  nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
     index_text  => '		Dogs?? Not sure if gusta..		',
   }
 
+#  mysqldb { 'testdb':
+#    user => "funky",
+#    password => "pizazz",
+#  }
+
+ 
   # Disabled ssh key
 #  ssh_authorized_key { 'john_ssh':
 #    user    => 'john',

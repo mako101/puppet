@@ -1,6 +1,6 @@
 class puppet {
   
-  include puppet::hosts, puppet::repo
+  include puppet::hosts, puppet::repo, puppet::git_aliases
   
   File {
     ensure => present,
