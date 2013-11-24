@@ -1,7 +1,8 @@
 
 node 'base' {
-  include nginx, random, stages, puppet 
-}
+  include nginx, random, stages, puppet
+  
+  }
 
 node 'ipa.example.net' inherits 'base'{
 
@@ -13,6 +14,8 @@ node 'ipa.example.net' inherits 'base'{
 #  include random::tidy
   include virtual::test1, virtual::test2
   include random::schedule, random::recurse 
+  
+  ruby::version {'2.0.0-p247':}
   
   
 #  class { 'puppet::secret':

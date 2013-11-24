@@ -1,0 +1,20 @@
+# .bashrc
+
+# Managed by puppet
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+alias root='sudo su -'
+
+alias gs='git status'
+alias gm='git commit -am'
+alias gpp='git pull && git push'
+
+if [ -x /home/viktor/.rbenv/bin/rbenv ] ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
