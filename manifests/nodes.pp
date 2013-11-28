@@ -108,6 +108,15 @@ node /beta.*/ inherits 'base' {
    minute  => '*/10',
    user    => 'git',
   }
+  
+  class { 'heartbeat::vip':
+    ip1   => '192.168.122.20',
+    ip2   => '192.168.122.30',
+    node1 => 'beta.example.net',
+    node2 => 'gamma.example.net',
+    vip   => '192.168.122.50/24',
+  }
+  
 }
 
 node 'gamma.example.net' {
@@ -128,7 +137,15 @@ node 'gamma.example.net' {
     type    => 'rsa',
     key     =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
   }
-
+  
+  class { 'heartbeat::vip':
+    ip1   => '192.168.122.20',
+    ip2   => '192.168.122.30',
+    node1 => 'beta.example.net',
+    node2 => 'gamma.example.net',
+    vip   => '192.168.122.50/24',
+  }
+  
 }
 
 node 'theta', 'zeta' inherits 'base' {}
