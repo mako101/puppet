@@ -11,8 +11,7 @@ class heartbeat {
   }
   
   file {'/etc/ha.d/authkeys':
-    content => "auth 1\n
-                sha1 supersecret\n",
+    content => "auth 1\n sha1 supersecret\n",
     mode    => '0600',
     require => Package['heartbeat'],
     notify  => Exec['reload_heartbeat'],
