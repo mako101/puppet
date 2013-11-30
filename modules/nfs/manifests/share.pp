@@ -9,7 +9,7 @@ define nfs::share ($path, $allowed, $options = '') {
   }
 
   file {"/etc/exports.d/${name}":
-    content => "${path} ${allowed} (${options})\n",
+    content => "${path} ${allowed}(${options})\n",
     notify  => Exec['update-etc-exports'],
   }
   
