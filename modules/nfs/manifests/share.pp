@@ -2,6 +2,8 @@
 
 define nfs::share ($path, $allowed, $options = '') {
   
+  include nfs
+  
   file {$path:
     ensure => directory,
   }
