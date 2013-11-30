@@ -117,6 +117,12 @@ node /beta.*/ inherits 'base' {
     vip   => '192.168.122.50/24',
   }
   
+  nfs::share {'data':
+    path    => '/data',
+    allowed => '192.168.122.0/24',
+    options => 'rw,sync,no_root_squash',
+  }
+  
 }
 
 node 'gamma.example.net' {
@@ -144,6 +150,12 @@ node 'gamma.example.net' {
     node1 => 'beta.example.net',
     node2 => 'gamma.example.net',
     vip   => '192.168.122.50/24',
+  }
+  
+  nfs::share {'foo':
+    path    => '/fooo',
+    allowed => '192.168.122.0/24',
+    options => 'rw,sync,no_root_squash',
   }
   
 }
