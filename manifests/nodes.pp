@@ -74,6 +74,8 @@ node /beta.*/ inherits 'base' {
   include sudoers, ntp, puppet::repo
   include dynamic::include
   include mysql::server
+  include haproxy
+  
  
   nginx::website { 'dogpics':
     site_domain => 'dogpics.example.net',
@@ -128,8 +130,8 @@ node /beta.*/ inherits 'base' {
 node 'gamma.example.net' {
   include sshd, puppet, sudoers, commands
   include inline_templates
-  include ntp
-
+  include ntp, haproxy
+    
   user { 'art':
     ensure  => present,
     comment => 'Art Vanderlay',
