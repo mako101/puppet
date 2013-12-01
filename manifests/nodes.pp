@@ -14,6 +14,7 @@ node 'ipa.example.net' inherits 'base'{
 #  include random::tidy
   include virtual::test1, virtual::test2
   include random::schedule, random::recurse 
+  include haproxy
   
   ruby::version {'2.0.0-p247':}
   
@@ -74,7 +75,6 @@ node /beta.*/ inherits 'base' {
   include sudoers, ntp, puppet::repo
   include dynamic::include
   include mysql::server
-  include haproxy
   
  
   nginx::website { 'dogpics':
@@ -130,8 +130,9 @@ node /beta.*/ inherits 'base' {
 node 'gamma.example.net' {
   include sshd, puppet, sudoers, commands
   include inline_templates
-  include ntp, haproxy
-    
+  include ntp
+  
+      
   user { 'art':
     ensure  => present,
     comment => 'Art Vanderlay',
