@@ -13,10 +13,30 @@ node 'ipa.example.net' inherits 'base'{
 #  include dynamic::app_version
 #  include random::tidy
   include virtual::test1, virtual::test2
-  include random::schedule, random::recurse 
+  include random::schedule 
+#  include random::recurse 
   include haproxy
   
+  notify { "${::current_users} users are currently logged in": }
+  
+  
+  case $::cpu_type {
+    'AMD'   : { notify {"Installing AMD-specific packages":} } 
+    'Intel' : { notify {"Installing Intel-specific packages":} }
+    default : { notify {"I don't know this processor!":} }
+  }
+  
+
+  
+  # notify { "${::real_users} have used this machine": }
+  
+  if 'viktor' in $::real_users {
+    notify {'Viktor waz ere!!': }
+  }
+  else { notify { "${::real_users} have used this machine": } }
+    
   ruby::version {'2.0.0-p247':}
+  
   
   
 #  class { 'puppet::secret':
