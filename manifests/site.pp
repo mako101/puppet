@@ -10,3 +10,9 @@ Service {
   hasstatus  => true,
   hasrestart => true
 }
+
+File {
+  owner => 'root',
+  group => 'root',
+  mode  => '0644',
+}

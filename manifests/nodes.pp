@@ -1,6 +1,6 @@
 
 node 'base' {
-  include nginx, random, stages, puppet
+  include nginx, random, stages, puppet, facts
   
   }
 
@@ -26,10 +26,15 @@ node 'ipa.example.net' inherits 'base'{
     default : { notify {"I don't know this processor!":} }
   }
   
-
+  if $::cpu_flags > 50 { notify { "This processor has lots of flags !!":} }
   
-  # notify { "${::real_users} have used this machine": }
-  
+   notify { "${::real_users} have used this machine": }
+   
+   notify { "Today is $::day_of_week ": }
+   
+   notify { "the word from hiera is ${word}": }
+   
+   
   if 'viktor' in $::real_users {
     notify {'Viktor waz ere!!': }
   }
