@@ -26,14 +26,25 @@ node 'ipa.example.net' inherits 'base'{
     default : { notify {"I don't know this processor!":} }
   }
   
-  if $::cpu_flags > 50 { notify { "This processor has lots of flags !!":} }
+#  $cpuflags = $::cpu_flags
+#  
+#  if $cpuflags > 50 { notify { "This processor has lots of flags !!":} }
   
-   notify { "${::real_users} have used this machine": }
+  notify { "${::real_users} have used this machine": }
    
-   notify { "Today is $::day_of_week ": }
+  notify { "Today is $::day_of_week ": }
    
-   notify { "the word from hiera is ${word}": }
+  $word = hiera('word')
    
+  notify { "the word from hiera is ${word}": }
+  
+  $greeting = hiera('greeting')
+  
+  notify { "My greeting is ${greeting}": } 
+  
+  $box_type = hiera('kernel_type')
+  
+  notify { "This is a ${box_type} box": }
    
   if 'viktor' in $::real_users {
     notify {'Viktor waz ere!!': }

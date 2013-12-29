@@ -1,5 +1,9 @@
 class facts {
   
+  file {'/etc/facter/facts.d':
+    ensure => directory,
+  }
+  
   file {'/etc/facter/facts.d/user.sh':
     source => 'puppet:///modules/facts/etc/facter/facts.d/user.sh',
     mode   => '0755',

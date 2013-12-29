@@ -1,6 +1,9 @@
 :hierarchy:
+   - kernel_%{::kernel}
+   - %{hostname}
    - common
 :backends:
    - yaml
 :yaml:
-   :datadir: "/home/${::user}/puppet/hiera"
+   :datadir: '/home/viktor/puppet/data'
+   

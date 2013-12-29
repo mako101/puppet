@@ -2,4 +2,4 @@
 
 PUPPETDIR=/home/viktor/puppet
 cd ${PUPPETDIR}
-sudo /usr/bin/puppet apply --modulepath ${PUPPETDIR}/modules ${PUPPETDIR}/manifests/site.pp --verbose $@
+sudo /usr/bin/puppet apply --modulepath ${PUPPETDIR}/modules ${PUPPETDIR}/manifests/site.pp --hiera_config=${PUPPETDIR}/hiera.yaml --verbose $@
