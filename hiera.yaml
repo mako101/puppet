@@ -1,9 +1,13 @@
 :hierarchy:
    - kernel_%{::kernel}
    - %{hostname}
+   - secret
    - common
 :backends:
    - yaml
+   - gpg
 :yaml:
+   :datadir: '/home/viktor/puppet/data'
+:gpg:
    :datadir: '/home/viktor/puppet/data'
    

@@ -45,6 +45,10 @@ node 'ipa.example.net' inherits 'base'{
   $box_type = hiera('kernel_type')
   
   notify { "This is a ${box_type} box": }
+  
+  $gpg = hiera('top_secret')
+
+  notify {"The encoded word is ${gpg}": }
    
   if 'viktor' in $::real_users {
     notify {'Viktor waz ere!!': }
