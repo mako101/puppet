@@ -1,0 +1,152 @@
+[Mon Nov 04 11:04:18 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:04:18 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:04:18 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:04:18 2013] [notice] Digest: done
+[Mon Nov 04 11:04:18 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:04:18 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:05:25 2013] [error] [client 127.0.0.1] failed to verify krb5 credentials: Server not found in Kerberos database
+[Mon Nov 04 11:05:30 2013] [error] [client 127.0.0.1] failed to verify krb5 credentials: Server not found in Kerberos database
+[Mon Nov 04 11:09:47 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:09:51 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:09:57 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:12:55 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:12:55 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:12:55 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:12:55 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:12:55 2013] [notice] Digest: done
+[Mon Nov 04 11:12:55 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:12:56 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:13:01 2013] [error] [client 127.0.0.1] empty passwords are not accepted
+[Mon Nov 04 11:13:01 2013] [error] [client 127.0.0.1] empty passwords are not accepted
+[Mon Nov 04 11:13:02 2013] [error] [client 127.0.0.1] empty passwords are not accepted
+[Mon Nov 04 11:13:19 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:13:19 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:13:19 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:13:19 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:13:19 2013] [notice] Digest: done
+[Mon Nov 04 11:13:19 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:13:19 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:13:49 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:18:50 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:18:50 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:18:50 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:18:50 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:18:50 2013] [notice] Digest: done
+[Mon Nov 04 11:18:50 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:18:50 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:19:03 2013] [error] [client 127.0.0.1] failed to verify krb5 credentials: Server not found in Kerberos database
+[Mon Nov 04 11:22:21 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:22:21 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:22:21 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:22:22 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:22:22 2013] [notice] Digest: done
+[Mon Nov 04 11:22:22 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:22:22 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:23:01 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:23:14 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: Client not found in Kerberos database
+[Mon Nov 04 11:23:29 2013] [error] [client 127.0.0.1] krb5_get_init_creds_password() failed: KDC reply did not match expectations
+[Mon Nov 04 11:23:42 2013] [error] [client 127.0.0.1] Directory index forbidden by Options directive: /var/www/html/
+[Mon Nov 04 11:25:10 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:25:11 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:25:11 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:25:11 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:25:11 2013] [notice] Digest: done
+[Mon Nov 04 11:25:11 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:25:11 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:28:41 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:30:15 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:30:15 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:30:15 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:30:15 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:30:15 2013] [notice] Digest: done
+[Mon Nov 04 11:30:15 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:30:15 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:30:27 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:30:27 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:34:11 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:34:13 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:34:22 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:34:22 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:34:22 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:16 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:16 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:16 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:19 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:23 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:33 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:33 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:36:33 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:40:49 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:40:49 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:40:49 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:40:49 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:40:49 2013] [notice] Digest: done
+[Mon Nov 04 11:40:49 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:40:49 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:41:03 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:41:04 2013] [error] [client 127.0.0.1] gss_display_name() failed: A required input parameter could not be read: An invalid name was supplied (, Unknown error)
+[Mon Nov 04 11:46:49 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:46:49 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:46:49 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:46:49 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:46:49 2013] [notice] Digest: done
+[Mon Nov 04 11:46:50 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:46:50 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:46:53 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Mon Nov 04 11:46:53 2013] [error] [client 10.81.10.130] File does not exist: /var/www/html/favicon.ico
+[Mon Nov 04 11:47:26 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Mon Nov 04 11:48:01 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Mon Nov 04 11:48:29 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:48:29 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:48:29 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:48:29 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:48:29 2013] [notice] Digest: done
+[Mon Nov 04 11:48:29 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:48:29 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:48:37 2013] [notice] [client 10.81.10.130] krb5_aname_to_localname() found no mapping for principal barney@LMAX12.CORP
+[Mon Nov 04 11:48:38 2013] [notice] [client 10.81.10.130] krb5_aname_to_localname() found no mapping for principal barney@LMAX12.CORP
+[Mon Nov 04 11:49:10 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Mon Nov 04 11:49:38 2013] [notice] [client 10.81.10.130] krb5_aname_to_localname() found no mapping for principal dave@LMAX12.CORP
+[Mon Nov 04 11:49:55 2013] [notice] caught SIGTERM, shutting down
+[Mon Nov 04 11:49:56 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Mon Nov 04 11:49:56 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Nov 04 11:49:56 2013] [notice] Digest: generating secret for digest authentication ...
+[Mon Nov 04 11:49:56 2013] [notice] Digest: done
+[Mon Nov 04 11:49:56 2013] [warn] ./mod_dnssd.c: No services found to register
+[Mon Nov 04 11:49:56 2013] [notice] Apache/2.2.15 (Unix) DAV/2 mod_auth_kerb/5.4 configured -- resuming normal operations
+[Mon Nov 04 11:50:01 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Thu Nov 14 17:24:01 2013] [notice] caught SIGTERM, shutting down
+[Thu Nov 14 17:24:50 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Thu Nov 14 17:24:50 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Thu Nov 14 17:24:50 2013] [notice] Digest: generating secret for digest authentication ...
+[Thu Nov 14 17:24:50 2013] [notice] Digest: done
+[Thu Nov 14 17:24:50 2013] [notice] Apache/2.2.15 (Unix) DAV/2 configured -- resuming normal operations
+[Thu Nov 14 17:24:50 2013] [warn] ./mod_dnssd.c: No services found to register
+[Thu Nov 14 17:24:54 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Thu Nov 14 17:25:28 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-admin/install.php denied
+[Thu Nov 14 17:25:34 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-admin/install.php denied
+[Thu Nov 14 17:25:36 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-admin/install.php denied
+[Thu Nov 14 17:28:23 2013] [notice] caught SIGTERM, shutting down
+[Thu Nov 14 17:28:23 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Thu Nov 14 17:28:23 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Thu Nov 14 17:28:23 2013] [notice] Digest: generating secret for digest authentication ...
+[Thu Nov 14 17:28:23 2013] [notice] Digest: done
+[Thu Nov 14 17:28:23 2013] [warn] ./mod_dnssd.c: No services found to register
+[Thu Nov 14 17:28:23 2013] [notice] Apache/2.2.15 (Unix) DAV/2 configured -- resuming normal operations
+[Thu Nov 14 17:28:28 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-admin/install.php denied
+[Thu Nov 14 17:28:41 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-admin/ denied
+[Thu Nov 14 17:32:05 2013] [error] [client 10.81.10.130] File does not exist: /var/www/html/index.html
+[Thu Nov 14 17:35:52 2013] [notice] caught SIGTERM, shutting down
+[Thu Nov 14 17:35:52 2013] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+[Thu Nov 14 17:35:52 2013] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Thu Nov 14 17:35:52 2013] [notice] Digest: generating secret for digest authentication ...
+[Thu Nov 14 17:35:52 2013] [notice] Digest: done
+[Thu Nov 14 17:35:52 2013] [warn] ./mod_dnssd.c: No services found to register
+[Thu Nov 14 17:35:52 2013] [notice] Apache/2.2.15 (Unix) DAV/2 configured -- resuming normal operations
+[Thu Nov 14 17:35:58 2013] [error] [client 10.81.10.130] Directory index forbidden by Options directive: /var/www/html/
+[Thu Nov 14 17:36:29 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-content denied
+[Thu Nov 14 17:37:08 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-content denied
+[Thu Nov 14 17:37:09 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-content denied
+[Thu Nov 14 17:37:09 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-content denied
+[Thu Nov 14 17:37:10 2013] [error] [client 10.81.10.130] (13)Permission denied: access to /wp-content denied
+[Thu Nov 14 17:41:01 2013] [notice] SIGHUP received.  Attempting to restart

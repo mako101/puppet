@@ -1,0 +1,84 @@
+#!/bin/bash
+######################################################################
+#                                                                    #
+#  Copyright (c) 2001, 2013 NoMachine, http://www.nomachine.com.     #
+#                                                                    #
+#  All rights reserved.                                              #
+#                                                                    #
+######################################################################
+
+# Basic support for RedHat style chkconfig
+#
+# chkconfig: - 99 01
+# description: Starts and stops the NoMachine NX Server.
+#
+### BEGIN INIT INFO
+# Provides:       nxserver
+# Required-Start: $local_fs $remote_fs
+# Should-Start: $network $sshd
+# Required-Stop:  $local_fs $remote_fs
+# Default-Start:  2 3 4 5
+# Default-Stop:   0 1 6
+# Description:    Starts and stops the NoMachine NX Server.
+### END INIT INFO
+
+if [ -f "/bin/awk" ];
+then
+  COMMAND_AWK="/bin/awk"
+elif [ -f "/usr/bin/awk" ];
+then
+  COMMAND_AWK="/usr/bin/awk"
+else
+  echo "ERROR: awk command not found"
+  exit 1
+fi
+
+ETC_DIR='/etc/NX'
+NODE_ROOT=$($COMMAND_AWK -F'"' '/^ServerRoot/ {print $2}' $ETC_DIR/server/localhost/server.cfg)
+NXHTD_PATH_PID="$NODE_ROOT/var/run/nxhtd.pid"
+
+[ -f $ETC_DIR/nxserver ] || { echo "ERROR: $ETC_DIR/nxserver doesn't exist" ; exit 1; }
+
+start()
+{
+  $ETC_DIR/nxserver --startup
+}
+
+stop()
+{
+  $ETC_DIR/nxserver --shutdown --silence
+}
+
+restart()
+{
+  $ETC_DIR/nxserver --restart
+}
+
+status()
+{
+  $ETC_DIR/nxserver --status
+}
+
+case "$1" in
+'start')
+  start
+  ;;
+
+'stop')
+    stop
+  ;;
+
+'restart')
+    restart
+  ;;
+
+'status')
+  status
+  ;;
+
+*)
+  echo "Usage: $0 {start|stop|restart|status}"
+  exit 1
+  ;;
+
+esac

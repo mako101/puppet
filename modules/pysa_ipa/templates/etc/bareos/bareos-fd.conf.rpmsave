@@ -1,0 +1,43 @@
+#
+# Default  Bareos File Daemon Configuration file
+#
+#  For Bareos release 12.4.4 (12 June 2013) -- redhat Red Hat Enterprise Linux Server release 6.0 (Santiago)
+#
+# There is not much to change here except perhaps the
+# File daemon Name to
+#
+
+#
+# List Directors who are permitted to contact this File daemon
+#
+Director {
+  Name = localhost-dir
+  Password = "2/ky9gfA0WTD1PNlMqyfZB3wB4DFcRWDAqrM09wXYpcL"
+}
+
+#
+# Restricted Director, used by tray-monitor to get the
+#   status of the file daemon
+#
+Director {
+  Name = localhost-mon
+  Password = "81c4ueG24cJGBvX32NXcQV1elPydik2jMg4coHdf/d8m"
+  Monitor = yes
+}
+
+#
+# "Global" File daemon configuration specifications
+#
+FileDaemon {                          # this is me
+  Name = localhost-fd
+  Maximum Concurrent Jobs = 20
+
+  # remove comment in next line to load plugins from specified directory
+  # Plugin Directory = /usr/lib64/bareos/plugins
+}
+
+# Send all messages except skipped files back to Director
+Messages {
+  Name = Standard
+  director = localhost-dir = all, !skipped, !restored
+}
