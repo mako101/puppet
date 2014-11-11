@@ -1,3 +1,7 @@
+node 'test-app' {
+  include puppet, facts
+  }
+
 
 node 'base' {
   include nginx, random, stages, puppet, facts
