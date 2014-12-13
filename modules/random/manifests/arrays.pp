@@ -7,7 +7,7 @@ class random::arrays {
  
   $crew = 'Dave'
   if $crew in ['Dave', 'Frank', 'Sam'] {
-    notify { "I am sorry $crew, I can't let you do that": }
+    notify { "I am sorry ${crew}, I can't let you do that": }
   }
   
 #  define list_lunch() {
@@ -29,7 +29,7 @@ class random::arrays {
 $vms = 'ipa:alpha,beta gamma'
 $items = split($vms, ' |,|:')
   
-list_vms {$items: }   
+list_vms {$items: }
  
  
  

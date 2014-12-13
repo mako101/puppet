@@ -9,6 +9,6 @@ class dynamic::app_version {
    if versioncmp($::puppetversion, '3.3.10') >=0 {
      notify {'Puppet is up to date':}
    }
-   else { notify {'Puppet version is too old!': } } 
+   else { notify {'Puppet version is too old!': } }
    
 }

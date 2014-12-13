@@ -82,7 +82,7 @@ class jenkins(
   anchor {'jenkins::end':}
 
   if $install_java {
-    class {java:
+    class {'java':
       distribution => 'jdk'
     }
   }

@@ -1,8 +1,8 @@
 class inline_templates {
   
-  $path = '/tmp/templates' 
+  $path = '/tmp/templates'
   
-  file {"${path}": 
+  file {$path:
     ensure => directory,
   }
   
@@ -18,12 +18,12 @@ class inline_templates {
   
   file {"${path}/time":
     ensure  => present,
-    content => inline_template("The time right now is <%= Time.now %>."),
+    content => inline_template('The time right now is <%= Time.now %>.'),
   }
 
   file {"${path}/evaluation":
     ensure  => present,
     content => inline_template("Does this file exist? <%= FileTest.exists?('/tmp/test') ? 'true' : 'false' %>"),
-  }  
+  }
 
-}  
+}

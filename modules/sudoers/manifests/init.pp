@@ -8,4 +8,4 @@ class sudoers {
    owner  => 'root',
    group  => 'root',
    }
-} 
+}

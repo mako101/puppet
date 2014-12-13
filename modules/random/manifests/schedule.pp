@@ -1,5 +1,5 @@
 class random::schedule {
-  schedule { 'every_5_mins': 
+  schedule { 'every_5_mins':
     period  => 'hourly',
     weekday => ['Mon', 'Wed', 'Fri'],
     range   => '10:00-23:00',

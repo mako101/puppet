@@ -6,8 +6,8 @@ define ruby::version($user = 'viktor') {
   exec {"install-ruby-${version}":
     command => "/bin/su - ${user} -c '/home/${user}/.rbenv/bin/rbenv install ${version}'",
     creates => "/home/${user}/.rbenv/versions/${version}",
-    require => [ Exec['install-rbenv'], 
-    File["/home/${user}/.bashrc"], 
+    require => [ Exec['install-rbenv'],
+    File["/home/${user}/.bashrc"],
     Package['curl'] ],
     timeout => 0,
   }

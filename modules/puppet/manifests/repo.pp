@@ -1,12 +1,12 @@
 class puppet::repo {
   
-  file {'/etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs': 
+  file {'/etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs':
     ensure => present,
     source => 'puppet:///modules/puppet/RPM-GPG-KEY-puppetlabs',
     owner  => 'root',
     group  => 'root',
     mode   =>  '0644',
-    }  
+    }
     
   yumrepo {'puppetlabs':
     require  => File['/etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs'],

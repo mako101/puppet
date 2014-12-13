@@ -6,7 +6,7 @@ class stages {
   class middle { notify {'I like to fiddle in the middle :3': }  }
   class last { notify {'Bitchez luvz it when I come last >:)': }  }
   
-  class {'first': stage => 'first' } 
+  class {'first': stage => 'first' }
   class {'middle': stage => 'main' }
   class {'last': stage => 'last' }
     

@@ -12,7 +12,7 @@ class puppet::hosts {
   
   host {'beta.example.net':
     ip           => '192.168.122.20',
-    host_aliases => 'beta', 
+    host_aliases => 'beta',
   }
 
   host {'gamma.example.net':

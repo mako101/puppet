@@ -1,7 +1,7 @@
 class nginx::service {
-	service { 'nginx':
-    	ensure  => running,
-    	require => Package['nginx'],
-    	enable  => true,
+  service { 'nginx':
+      ensure  => running,
+      require => Package['nginx'],
+      enable  => true,
   }
 }

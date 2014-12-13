@@ -6,21 +6,21 @@ class random::if {
     notify { 'This machine has a lot of RAM': }
   }
     elsif $::memorysize_mb >= 4000 {
-    notify { 'This machine has moderate amount of RAM': }    
+    notify { 'This machine has moderate amount of RAM': }
   }
-    else { 
+    else {
     notify { 'This machine has little RAM': }
   }
 
   if $::processorcount < 2 {
     notify { 'This is a single-core machine': }
-  } 
-    else { 
-    notify { 'This is a multi-core machine': } 
+  }
+    else {
+    notify { 'This is a multi-core machine': }
   }
   
   unless $::kernel == 'Windows' {
-    notify { 'This machine runs a Linux kernel': }  
+    notify { 'This machine runs a Linux kernel': }
   }
   
 # Testing the case statements  
@@ -32,7 +32,7 @@ class random::if {
     'Debian', 'Ubuntu': {
       notify { 'This is a Debian derivative': }
     }
-    default: { fail('Puppet cannot recognise the installed OS') 
+    default: { fail('Puppet cannot recognise the installed OS')
     }
   }
     
@@ -60,7 +60,7 @@ class random::if {
   
   $uname = generate('/bin/uname', '-a')
   if $uname =~ /(\d)\.(\d+)(\.\d+)/ {
-    notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"$3\"": }
+    notify { "I have kernel version ${0} \n Major version ${1}, minor version ${2}, patch \"${3}\"": }
   }
   
   if $::processor0 =~ /AMD (.*-\d+)/ {
@@ -68,7 +68,7 @@ class random::if {
   }
   
   if $::processor1 =~ /\D{3,6}-Core/ {
-  $pcount = regsubst($0, '\[A-Z]', '\[a-z]')  
+  $pcount = regsubst($0, '\[A-Z]', '\[a-z]')
  notify { "This processor has ${pcount} structure": }
 #   notify { "The captured text is ${0}": }
   }

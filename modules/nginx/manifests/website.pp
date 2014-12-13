@@ -15,7 +15,7 @@ define nginx::website ( $site_domain, $hour = '00', $index_text = 'default' ) {
 
   file {"/etc/nginx/conf.d/${site_name}.conf":
     require => Package['nginx'],
-    content  => template('nginx/vhost.conf.erb'),
+    content => template('nginx/vhost.conf.erb'),
     notify  => Service['nginx'],
   }
 
@@ -28,7 +28,7 @@ define nginx::website ( $site_domain, $hour = '00', $index_text = 'default' ) {
   cron { "Back up ${site_name}":
     command => "/usr/bin/rsync -avz /var/www/${site_name}/ /backup/${site_name}/",
     hour    => $hour,
-    minute  => '00', 
+    minute  => '00',
     user    => 'root',
   }
 }

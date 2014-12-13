@@ -68,10 +68,10 @@ define concat(
   $default_warn_message = '# This file is managed by Puppet. DO NOT EDIT.'
 
   case $warn {
-    'true', true, yes, on: {
+    true, true, yes, on: {
       $warnmsg = $default_warn_message
     }
-    'false', false, no, off: {
+    false, false, no, off: {
       $warnmsg = ''
     }
     default: {
@@ -86,10 +86,10 @@ define concat(
   }
 
   case $force {
-    'true', true, yes, on: {
+    true, true, yes, on: {
       $forceflag = '-f'
     }
-    'false', false, no, off: {
+    false, false, no, off: {
       $forceflag = ''
     }
     default: {
@@ -110,10 +110,10 @@ define concat(
   }
 
   case $ensure_newline {
-    'true', true, yes, on: {
+    true, true, yes, on: {
       $newlineflag = '-l'
     }
-    'false', false, no, off: {
+    false, false, no, off: {
       $newlineflag = ''
     }
     default: {
@@ -139,13 +139,13 @@ define concat(
   }
 
   file { "${fragdir}/fragments":
-    ensure   => directory,
-    force    => true,
-    ignore   => ['.svn', '.git', '.gitignore'],
-    notify   => Exec["concat_${name}"],
-    purge    => true,
-    recurse  => true,
-    source   => $source_real,
+    ensure  => directory,
+    force   => true,
+    ignore  => ['.svn', '.git', '.gitignore'],
+    notify  => Exec["concat_${name}"],
+    purge   => true,
+    recurse => true,
+    source  => $source_real,
   }
 
   file { "${fragdir}/fragments.concat":
@@ -157,26 +157,26 @@ define concat(
   }
 
   file { $name:
-    ensure   => present,
-    path     => $path,
-    alias    => "concat_${name}",
-    group    => $group,
-    mode     => $mode,
-    owner    => $owner,
-    source   => "${fragdir}/${concat_name}",
+    ensure => present,
+    path   => $path,
+    alias  => "concat_${name}",
+    group  => $group,
+    mode   => $mode,
+    owner  => $owner,
+    source => "${fragdir}/${concat_name}",
   }
 
   exec { "concat_${name}":
-    alias       => "concat_${fragdir}",
-    command     => "${concat::setup::concatdir}/bin/concatfragments.sh -o ${fragdir}/${concat_name} -d ${fragdir} ${warnflag} ${forceflag} ${orderflag} ${newlineflag}",
-    notify      => File[$name],
-    require     => [
+    alias     => "concat_${fragdir}",
+    command   => "${concat::setup::concatdir}/bin/concatfragments.sh -o ${fragdir}/${concat_name} -d ${fragdir} ${warnflag} ${forceflag} ${orderflag} ${newlineflag}",
+    notify    => File[$name],
+    require   => [
       File[$fragdir],
       File["${fragdir}/fragments"],
       File["${fragdir}/fragments.concat"],
     ],
-    subscribe   => File[$fragdir],
-    unless      => "${concat::setup::concatdir}/bin/concatfragments.sh -o ${fragdir}/${concat_name} -d ${fragdir} -t ${warnflag} ${forceflag} ${orderflag} ${newlineflag}",
+    subscribe => File[$fragdir],
+    unless    => "${concat::setup::concatdir}/bin/concatfragments.sh -o ${fragdir}/${concat_name} -d ${fragdir} -t ${warnflag} ${forceflag} ${orderflag} ${newlineflag}",
   }
 
   if $::id == 'root' {

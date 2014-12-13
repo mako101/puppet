@@ -75,7 +75,7 @@ class jenkins::slave (
   $client_url = "http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/${version}/"
 
   if $install_java {
-    class {java:
+    class {'java':
       distribution => 'jdk'
     }
   }
@@ -104,11 +104,11 @@ class jenkins::slave (
   }
 
   exec { 'get_swarm_client':
-    command      => "wget -O ${slave_home}/${client_jar} ${client_url}/${client_jar}",
-    path         => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
-    user         => $slave_user,
+    command => "wget -O ${slave_home}/${client_jar} ${client_url}/${client_jar}",
+    path    => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
+    user    => $slave_user,
     #refreshonly => true,
-    creates      => "${slave_home}/${client_jar}"
+    creates => "${slave_home}/${client_jar}"
     ## needs to be fixed if you create another version..
   }
 

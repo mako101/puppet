@@ -12,9 +12,9 @@ class nfs {
   }
   
   exec {'update-etc-exports':
-    command => '/bin/cat /etc/exports.d/* > /etc/exports',
-    notify  => Service['nfs'],
-    refreshonly => true,  
+    command     => '/bin/cat /etc/exports.d/* > /etc/exports',
+    notify      => Service['nfs'],
+    refreshonly => true,
   }
   
 }

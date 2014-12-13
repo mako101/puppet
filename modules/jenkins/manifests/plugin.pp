@@ -48,11 +48,11 @@ define jenkins::plugin($version=0) {
 
   exec {
     "download-${name}" :
-      command    => "wget --no-check-certificate ${base_url}${plugin}",
-      cwd        => $plugin_dir,
-      require    => [File[$plugin_dir], Package['wget']],
-      path       => ['/usr/bin', '/usr/sbin',],
-      unless     => "test -f ${plugin_dir}/${name}.hpi || test -f ${plugin_dir}/${name}.jpi",
+      command => "wget --no-check-certificate ${base_url}${plugin}",
+      cwd     => $plugin_dir,
+      require => [File[$plugin_dir], Package['wget']],
+      path    => ['/usr/bin', '/usr/sbin',],
+      unless  => "test -f ${plugin_dir}/${name}.hpi || test -f ${plugin_dir}/${name}.jpi",
   }
 
   file {

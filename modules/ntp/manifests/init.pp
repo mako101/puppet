@@ -5,9 +5,9 @@ class ntp {
   }
   
   file {'/etc/ntp.conf':
-    ensure  => present,
-    source  => 'puppet:///modules/ntp/ntp.conf',
-    notify  => Service['ntpd'],
+    ensure => present,
+    source => 'puppet:///modules/ntp/ntp.conf',
+    notify => Service['ntpd'],
   }
 
   service {'ntpd':

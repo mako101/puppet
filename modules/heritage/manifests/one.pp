@@ -1,7 +1,7 @@
 class heritage::one {
   
   file {'/tmp/bobo':
-    ensure   => present,  
+    ensure  => present,
     content => 'poo
 ',
   }
