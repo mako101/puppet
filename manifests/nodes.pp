@@ -24,8 +24,8 @@ node 'ipa.example.net' inherits 'base'{
 
 
   case $::cpu_type {
-    'AMD'   : { notify {"Installing AMD-specific packages":} }
-    'Intel' : { notify {"Installing Intel-specific packages":} }
+    'AMD'   : { notify {'Installing AMD-specific packages':} }
+    'Intel' : { notify {'Installing Intel-specific packages':} }
     default : { notify {"I don't know this processor!":} }
   }
 
@@ -35,7 +35,7 @@ node 'ipa.example.net' inherits 'base'{
 
   notify { "${::real_users} have used this machine": }
 
-  notify { "Today is $::day_of_week ": }
+  notify { "Today is ${::day_of_week} ": }
 
   $word = hiera('word')
 
@@ -83,7 +83,7 @@ node 'ipa.example.net' inherits 'base'{
   }
 
   file { '/etc/motd':
-    content => "Puppeting away since 2013!!",
+    content => 'Puppeting away since 2013!!',
   }
 
   cron { 'Cron job to run as user':
@@ -103,11 +103,11 @@ node 'ipa.example.net' inherits 'base'{
     line => 'foobareefdfjidjasi;d',
   }
 
-  $mysql_password = "secret"
+  $mysql_password = 'secret'
 
   mysql::db {'testdb':
-    user => "funky",
-    password => "pizazz",
+    user     => 'funky',
+    password => 'pizazz',
   }
 
 }
@@ -140,11 +140,11 @@ node /beta.*/ inherits 'base' {
 
   #Disabled user
   user { 'john':
-    ensure  => present,
-    comment => 'John Simmons',
-    home    => '/home/john',
+    ensure     => present,
+    comment    => 'John Simmons',
+    home       => '/home/john',
     managehome => true,
-    password => '*',
+    password   => '*',
   }
 
   cron {'Pull and apply puppet updates':
@@ -177,17 +177,17 @@ node 'gamma.example.net' {
 
 
   user { 'art':
-    ensure  => present,
-    comment => 'Art Vanderlay',
-    home    => '/home/art',
+    ensure     => present,
+    comment    => 'Art Vanderlay',
+    home       => '/home/art',
     managehome => true,
   }
 
 
   ssh_authorized_key { 'art_ssh':
-    user    => 'art',
-    type    => 'rsa',
-    key     =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
+    user => 'art',
+    type => 'rsa',
+    key  =>  'AAAAB3NzaC1yc2EAAAABIwAAAQEAsdNfFRoPxC5HJWgxc6rsJlPhDb1pDXymhI5ih5KFP8bfFDVfix2/PvRU9MjY5IetEZxIaXrzZ8395eo/pvjY6qXOLpmL9p9QmLaqWiio9Li7EeWS3jjGcTg5iAf7KgcEROEb9Zb6eNOCmtvyoKJAztn3fb4cNTirL/9LtUEWHQvadATZtfFa76eDaK78BJ0yZZDYUa7SH219ZunMMalkLZJneNIay4+s73X/EDnzoG1WPre4ah2vTNDzhfoYWp8qWcw5WncydyyvA3JwljZWjYrJUjcnXhOxAqtjKBFccT7W67Uym6zDzQP3HQm1KPZg/9LxzZQzOxxljHkmtMTTRQ==',
   }
 
   class { 'heartbeat::vip':

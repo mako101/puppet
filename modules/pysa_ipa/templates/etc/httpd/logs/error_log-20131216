@@ -1,5 +1,0 @@
-[Tue Nov 19 17:41:02 2013] [notice] Digest: generating secret for digest authentication ...
-[Tue Nov 19 17:41:02 2013] [notice] Digest: done
-[Tue Nov 19 17:41:02 2013] [warn] ./mod_dnssd.c: No services found to register
-[Tue Nov 19 17:41:02 2013] [notice] Apache/2.2.15 (Unix) DAV/2 PHP/5.3.3 configured -- resuming normal operations
-[Mon Dec 16 13:13:43 2013] [notice] caught SIGTERM, shutting down

@@ -1,3 +1,0 @@
-PROGRAM=/usr/sbin/system-config-network
-SESSION=true
-. config-util

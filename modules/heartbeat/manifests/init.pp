@@ -3,7 +3,7 @@ class heartbeat {
   
   service {'heartbeat':
     require => Package['heartbeat'],
-  } 
+  }
   
   exec {'reload_heartbeat':
     command     => '/sbin/service heartbeat reload',

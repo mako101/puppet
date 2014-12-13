@@ -1,4 +1,0 @@
-# nxsshd: auth account password session
-auth    required        pam_unix.so
-account required        pam_localuser.so
-session required        pam_unix.so 
