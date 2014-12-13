@@ -44,7 +44,7 @@ class mysql::server {
     notify  => Service['mysqld'],
     require => Package['mysql-server'],
   }
- 
+
   file { '/etc/my.cnf':
     require => File['/var/lib/mysql/my.cnf'],
     ensure  => symlink,

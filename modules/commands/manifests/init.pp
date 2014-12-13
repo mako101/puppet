@@ -7,15 +7,15 @@ class commands {
   }
 
   exec { 'Config Update':
-   command     => '/bin/echo I ran this command on `/bin/date` > /tmp/command.txt',
-   refreshonly => true,
-   subscribe   => File['/tmp/test.conf'],
+    command     => '/bin/echo I ran this command on `/bin/date` > /tmp/command.txt',
+    refreshonly => true,
+    subscribe   => File['/tmp/test.conf'],
   }
 
   exec { 'Copy Once':
-   cwd     => '/tmp',
-   command => '/bin/cp /etc/motd  /tmp/copy_once',
-   creates => '/tmp/copy_once',
+    cwd     => '/tmp',
+    command => '/bin/cp /etc/motd  /tmp/copy_once',
+    creates => '/tmp/copy_once',
   }
 
 # 3-step command

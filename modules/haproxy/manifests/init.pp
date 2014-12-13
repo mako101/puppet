@@ -9,7 +9,7 @@ class haproxy {
   
   service {'haproxy':
     require => Package['haproxy']
- }
+  }
   
   file {'/etc/haproxy/haproxy.cfg':
     source  => 'puppet:///modules/haproxy/etc/haproxy/haproxy.cfg',

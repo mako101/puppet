@@ -1,6 +1,6 @@
 
 define nginx::website ( $site_domain, $hour = '00', $index_text = 'default' ) {
-     
+
   $site_name = $name
   
   file {"/var/www/${site_name}/":
