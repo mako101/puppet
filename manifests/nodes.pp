@@ -2,6 +2,10 @@ node 'test-app' {
   include puppet, facts
   }
 
+node 'deploy-server' {
+  include jenkins, mysql::server, heartbeat, facts
+}
+
 node 'base' {
   include nginx, random, stages, puppet, facts
 
