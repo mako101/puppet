@@ -18,6 +18,4 @@ class nginx::config {
     source  => 'puppet:///modules/nginx/RPM-GPG-KEY-nginx',
   }
 
- 
-
 }

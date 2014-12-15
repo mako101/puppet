@@ -2,7 +2,7 @@
 
 class ruby::rbenv ($user = 'viktor') {
   include ruby::build
-   
+
   exec {'install-rbenv':
     cwd     => "/home/${user}",
     user    => $user,
@@ -12,8 +12,7 @@ class ruby::rbenv ($user = 'viktor') {
   }
   
   file {"/home/${user}/.bashrc":
-    source => ["puppet:///modules/ruby/home/bashrc.${user}",
-               'puppet:///modules/ruby/home/bashrc'],
+    source => ["puppet:///modules/ruby/home/bashrc.${user}",            'puppet:///modules/ruby/home/bashrc'],
     mode   => '0644',
   }
   
