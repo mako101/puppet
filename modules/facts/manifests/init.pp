@@ -1,6 +1,6 @@
 class facts {
   
-  file {['/etc/facter', '/etc/facter/facts.d':
+  file {['/etc/facter', '/etc/facter/facts.d']:
     ensure => directory,
   }
   

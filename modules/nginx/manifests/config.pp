@@ -7,10 +7,6 @@ class nginx::config {
 #    content => 'puppet:///modules/nginx/epel.repo',
 #  }   
   
-  file { '/etc/yum.repos.d/nginx.repo':
-    ensure => present,
-    source => 'puppet:///modules/nginx/nginx.repo',
-  }
 
   file { '/etc/pki/rpm-gpg/RPM-GPG-KEY-nginx':
     ensure  => present,
