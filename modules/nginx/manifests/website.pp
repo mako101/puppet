@@ -1,7 +1,7 @@
 
-define nginx::website ( $site_domain, $hour = '00', $index_text = 'default' ) {
+define nginx::website ( $hour = '00', $index_text = 'default' ) {
 
-  $site_name = $name
+  $site_name = $title
   
   file {"/var/www/${site_name}/":
     ensure => directory,

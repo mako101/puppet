@@ -1,5 +1,9 @@
 node 'test-app' {
   include puppet, facts
+  
+  nginx::website {'catz.com':
+    hour => '05'
+  }
   }
 
 node 'deploy-server' {
@@ -7,20 +11,18 @@ node 'deploy-server' {
 }
 
 node 'base' {
-  include nginx, random, stages, puppet, facts
+  include nginx, puppet, facts
 
   }
 
 node 'ipa.example.net' inherits 'base'{
 
-  include dynamic, dynamic::include, dynamic::replace
 #  include dynamic::augeas
 #  include dynamic::replace
 #  include dynamic::templates
 #  include dynamic::app_version
 #  include random::tidy
   include virtual::test1, virtual::test2
-  include random::schedule
 #  include random::recurse
   include haproxy
 
