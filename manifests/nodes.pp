@@ -7,7 +7,7 @@ node 'test-app' {
   }
 
 node 'deploy-server' {
-  include jenkins, mysql::server, heartbeat, facts
+  include  nginx, mysql::server, facts
 }
 
 node 'base' {

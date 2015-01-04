@@ -7,7 +7,7 @@
    - yaml
    - gpg
 :yaml:
-   :datadir: '/home/viktor/puppet/data'
+   :datadir: '/var/go/git/puppet/data'
 :gpg:
-   :datadir: '/home/viktor/puppet/data'
+   :datadir: '/var/go/git/puppet/data'
    

@@ -7,6 +7,7 @@ class nginx::config {
 #    content => 'puppet:///modules/nginx/epel.repo',
 #  }   
   
+
 #  file { '/etc/yum.repos.d/nginx.repo':
 #    ensure => present,
 #    source => 'puppet:///modules/nginx/nginx.repo',

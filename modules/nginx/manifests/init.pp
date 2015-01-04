@@ -6,6 +6,6 @@ class nginx {
 
   Class['nginx::install']
   -> Class['nginx::config']
-  -> Class['config::service']
+  -> Class['nginx::service']
 
 }
