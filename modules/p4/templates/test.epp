@@ -1,0 +1,28 @@
+<%- | Boolean $keys_enable,
+      String  $keys_file,
+      Array   $keys_trusted,
+      Hash    $keys_hash
+
+| -%>
+<%# Parameter tag ↑ -%>
+
+<%# Non-printing tag ↓ -%>
+<% if $keys_enable { -%>
+
+
+Blah blah 
+
+<%# Expression-printing tag ↓ -%>
+keys <%= $keys_file %>
+<% } %>
+
+<% unless $keys_trusted =~ Array[Data,0,0] { -%>
+trustedkey <%= $keys_trusted.join(':') %>
+<% } -%>
+
+<% if $keys_hash { %>
+<%   $keys_hash.each | $key, $value| {  %>
+key = <%= $key -%> ; value =  <%= $value -%>
+<% } %>
+
+<% } %>
